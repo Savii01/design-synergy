@@ -9,88 +9,72 @@ import Delivery1 from '../Assets/images/delivery1.eba86ac6c70aa03225cb.png'
 
 function Processes() {
   return (
-    <div className="bg-gray-100 rounded-[30px] mb-10">
-      <div className="text-black flex flex-col justify-center items-center text-center mt-10 md:px-4 pb-20 md:pt-10">
+    <div className="bg-gray-100 dark:bg-gray-800 rounded-[30px] py-4 mt-10 mb-10">
+      <div className="text-black dark:text-white flex flex-col justify-center items-center text-center mt-10 md:px-4 pb-20 md:pt-10">
         <p className="text-[18px] font-semibold mb-5">Our Process</p>
-        <h1 className="font-sans font-extrabold text-[32px] px-4 md:text-[36px] lg:text-[36px] leading-[36px] md:leading-[40px]">
-            Create your design in 3 quick steps!
+        <h1 className="font-customFont font-extrabold text-[36px] px-4 md:text-[36px] lg:text-[36px] leading-[36px] md:leading-[40px]">
+          Create your design in 3 quick steps!
         </h1>
-        <div className="grid grid-cols-1 md:grid-cols-4 gap-4 mt-10">
-          <div className="bg-gray-100 hover:bg-white/70 flex flex-col border-2 border-gray-400 py-8 rounded-3xl w-[290px] h-[260px] px-5">
-            {/* <img 
-            src={Brief1} 
-            alt="brief icon" 
-            className="h-[28px] w-[32px]" /> */}
-            <AiIcons.AiFillCreditCard className="w-[32px] h-[32px] text-purple"/>
-            <div className="text-left text-black mt-3 flex flex-col gap-y-2">
-              <h1 className="text-[28px] font-extrabold">
-              Subscription
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 mt-10">
+          {/* Subscription / Plan Card */}
+          <div className="bg-gray-100 dark:bg-gray-700 hover:bg-white/70 dark:hover:bg-gray-600 flex flex-col border-2 border-gray-400 dark:border-gray-600 py-8 rounded-3xl w-[290px] h-[350px] px-5">
+            {/* Icon */}
+            <AiIcons.AiFillCreditCard className="w-[32px] h-[32px] text-purple  dark:text-lightBlue dark:text-blue" />
+            <div className="text-left mt-3 flex flex-col gap-y-2">
+              <h1 className="text-[28px] font-extrabold text-black dark:text-white">
+                Subscription
               </h1>
-              <p className="text-left text-[13px]">
-              Start by sharing your ideas and requirements with us. This initial step allows us to understand 
-              your vision, target audience, and specific goals for the design.
+              <p className="text-[16px] text-black dark:text-gray-300">
+                Select a plan that aligns with your business needs. Whether you're starting fresh or scaling up, we have the right solution to bring your brand to life.
               </p>
-
             </div>
-
           </div>
-          <div className="bg-gray-100 hover:bg-white/70 flex flex-col border-2 border-gray-400 py-8 rounded-3xl w-[290px] h-[260px] px-5">
-            {/* <img 
-            src={Brief1} 
-            alt="brief icon" 
-            className="h-[28px] w-[32px]" /> */}
-             <FaIcons.FaBriefcase className="w-[32px] h-[32px] text-purple"/>
-            <div className="text-left text-black mt-3 flex flex-col gap-y-2">
-              <h1 className="text-[28px] font-extrabold">
-              Brief
+
+          {/* Brief Card */}
+          <div className="bg-gray-100 dark:bg-gray-700 hover:bg-white/70 dark:hover:bg-gray-600 flex flex-col border-2 border-gray-400 dark:border-gray-600 py-8 rounded-3xl w-[290px] h-[350px] px-5">
+            {/* Icon */}
+            <FaIcons.FaBriefcase className="w-[32px] h-[32px] text-purple  dark:text-lightBlue dark:text-blue" />
+            <div className="text-left mt-3 flex flex-col gap-y-2">
+              <h1 className="text-[28px] font-extrabold text-black dark:text-white">
+                Brief
               </h1>
-              <p className="text-left text-[13px]">
-              Start by sharing your ideas and requirements with us. This initial step allows us to understand 
-              your vision, target audience, and specific goals for the design.
+              <p className="text-[16px] text-black dark:text-gray-300">
+                We dive into your vision, goals, and requirements. Through a structured onboarding process, we gather insights to ensure our strategy aligns perfectly with your brand.
               </p>
-
             </div>
-
           </div>
-          <div className="bg-gray-100 hover:bg-white/70 flex flex-col border-2 border-gray-400 py-8 rounded-3xl w-[290px] h-[260px] px-5">
-            {/* <img 
-            src={Design1} 
-            alt="brief icon" 
-            className="h-[28px] w-[32px]" /> */}
-             <BsIcons.BsPalette className="w-[32px] h-[32px] text-purple"/>
-            <div className="text-left text-black mt-3 flex flex-col gap-y-2">
-              <h1 className="text-[28px] font-extrabold">
-              Design
+
+          {/* Design Card */}
+          <div className="bg-gray-100 dark:bg-gray-700 hover:bg-white/70 dark:hover:bg-gray-600 flex flex-col border-2 border-gray-400 dark:border-gray-600 py-8 rounded-3xl w-[290px] h-[350px] px-5">
+            {/* Icon */}
+            <BsIcons.BsPalette className="w-[32px] h-[32px] text-purple  dark:text-lightBlue dark:text-blue" />
+            <div className="text-left mt-3 flex flex-col gap-y-2">
+              <h1 className="text-[28px] font-extrabold text-black dark:text-white">
+                Design
               </h1>
-              <p className="text-left text-[13px]">
-                Our creative team will transform your brief into captivating design concepts. 
-                {/* We’ll collaborate with you, making revisions as needed to ensure the final design aligns with your vision. */}
+              <p className="text-[16px] text-black dark:text-gray-300">
+                Our team crafts a compelling brand identity and seamless digital experience. From visual aesthetics to functional web solutions, we ensure every detail enhances your brand’s presence.
               </p>
-
             </div>
-
           </div>
-          <div className="bg-gray-100 hover:bg-white/70 flex flex-col border-2 border-gray-400 py-8 rounded-3xl w-[290px] h-[260px] px-5">
-            {/* <img 
-            src={Delivery1} 
-            alt="brief icon" 
-            className="h-[28px] w-[32px]" /> */}
-             <AiIcons.AiFillFileZip className="w-[32px] h-[32px] text-purple"/>
-            <div className="text-left text-black mt-3 flex flex-col gap-y-2">
-              <h1 className="text-[28px] font-extrabold">
-              Delivery
+
+          {/* Delivery Card */}
+          <div className="bg-gray-100 dark:bg-gray-700 hover:bg-white/70 dark:hover:bg-gray-600 flex flex-col border-2 border-gray-400 dark:border-gray-600 py-8 rounded-3xl w-[290px] h-[350px] px-5">
+            {/* Icon */}
+            <AiIcons.AiFillFileZip className="w-[32px] h-[32px] text-purple  dark:text-lightBlue" />
+            <div className="text-left mt-3 flex flex-col gap-y-2">
+              <h1 className="text-[28px] font-extrabold text-black dark:text-white">
+                Delivery
               </h1>
-              <p className="text-left text-[13px]">
-              Once you’re satisfied with the design, we’ll deliver the final product promptly, 
-              ensuring you have everything you need to implement your new design seamlessly.
+              <p className="text-[16px] text-black dark:text-gray-300">
+                After final refinements and rigorous quality checks, we deliver a polished, high-performing brand experience—ready to engage your audience and drive results.
               </p>
             </div>
           </div>
         </div>
+      </div>
     </div>
-
-    </div>
-  )
+  );
 }
 
-export default Processes
+export default Processes;

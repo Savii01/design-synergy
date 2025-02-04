@@ -1,73 +1,125 @@
-import React, { useState } from "react";
+// Top.jsx
+import React, { useState, useContext } from "react";
 import { Link } from "react-router-dom"; // Import React Router Link
 import Logo from "../Assets/images/LOGO-circle.png";
+import * as FaIcons from "react-icons/fa";
 import * as AiIcons from "react-icons/ai";
+import { ThemeContext } from "../ThemeContext"; // Import the theme context
 
 function Top() {
   const [showMenu, setShowMenu] = useState(false);
+  const { darkMode, setDarkMode } = useContext(ThemeContext);
 
-  // Function to close menu when clicking outside
+  // Function to close the mobile menu
   const closeMenu = () => setShowMenu(false);
 
   return (
     <>
-      <div className="fixed w-full h-20 bg-white text-black border-b border-black flex justify-between items-center px-4 md:px-8 lg:px-16 z-50">
+      {/* Top Bar */}
+      <div className="fixed w-full h-20 bg-white dark:bg-gray-900 text-black dark:text-white border-b border-black dark:border-gray-700 flex justify-between items-center px-4 md:px-8 lg:px-16 z-[1000]">
         {/* Logo Section */}
         <div className="flex items-center gap-2">
-          <img src={Logo} alt="Logo" className="w-10 border-5 rounded-full bg-black h-10" />
-          <h2 className="text-[16px] font-bold md:text-[20px]">Design Synergy</h2>
+          <img
+            src={Logo}
+            alt="Logo"
+            className="w-10 h-10 rounded-full bg-black"
+          />
+          <h2 className="text-[16px] font-bold md:text-[20px]">
+            Design Synergy
+          </h2>
         </div>
 
-        {/* Desktop Menu */}
-        <div className="hidden md:flex">
-          <ul className="flex md:items-center md:justify-center gap-6 lg:gap-10">
+        {/* Desktop Menu & Theme Toggle */}
+        <div className="hidden lg:flex items-center gap-4">
+          <ul className="flex lg:items-center lg:justify-center gap-6 lg:gap-10">
             <li>
-              <Link to="/" className="cursor-pointer hover:text-purple py-2 px-4">
+              <Link
+                to="/"
+                className="cursor-pointer hover:text-purple py-2 px-4"
+              >
                 Home
               </Link>
             </li>
             <li>
-              <Link to="/about" className="cursor-pointer hover:text-purple py-2 px-4">
+              <Link
+                to="/about"
+                className="cursor-pointer hover:text-purple py-2 px-4"
+              >
                 About
               </Link>
             </li>
             <li>
-              <Link to="/process" className="cursor-pointer hover:text-purple py-2 px-4">
+              <Link
+                to="/process"
+                className="cursor-pointer hover:text-purple py-2 px-4"
+              >
                 Process
               </Link>
             </li>
             <li>
-              <Link to="/projects" className="cursor-pointer hover:text-purple py-2 px-4">
+              <Link
+                to="/projects"
+                className="cursor-pointer hover:text-purple py-2 px-4"
+              >
                 Projects
               </Link>
             </li>
             <li>
               <Link to="/contact">
-                <button className="text-white text-[16px] bg-black font-bold py-2 px-4 rounded-md hover:bg-gradient-purple-blue transition-all">
+                <button className="text-white text-[16px] bg-black dark:bg-gray-800 font-bold py-2 px-4 rounded-md hover:bg-gradient-purple-blue transition-all">
                   Hire Us
                 </button>
               </Link>
             </li>
           </ul>
+          {/* Theme Toggle Button for Desktop */}
+          <button
+            onClick={() => setDarkMode(!darkMode)}
+            className="ml-4 p-2 rounded-full bg-gray-200 dark:bg-gray-700 hover:bg-gray-300 dark:hover:bg-gray-600 transition"
+            aria-label="Toggle Dark Mode"
+          >
+            {darkMode ? <FaIcons.FaSun size={24} /> : <FaIcons.FaMoon size={24} />}
+          </button>
         </div>
 
-        {/* Mobile Menu Icon */}
-        <AiIcons.AiOutlineMenu size={24} className="text-black md:hidden cursor-pointer" onClick={() => setShowMenu(true)} />
+        {/* Mobile Menu Icons */}
+        <div className="flex lg:hidden items-center">
+          {/* Mobile Theme Toggle */}
+          <button
+            onClick={() => setDarkMode(!darkMode)}
+            className="mr-4 p-2 rounded-full bg-gray-200 dark:bg-gray-700 hover:bg-gray-300 dark:hover:bg-gray-600 transition"
+            aria-label="Toggle Dark Mode"
+          >
+            {darkMode ? <FaIcons.FaSun size={24} /> : <FaIcons.FaMoon size={24} />}
+          </button>
+          <AiIcons.AiOutlineMenu
+            size={24}
+            className="text-black dark:text-white cursor-pointer"
+            onClick={() => setShowMenu(true)}
+          />
+        </div>
       </div>
 
-      {/* Black Blur Overlay - Covers the whole screen */}
+      {/* Mobile Menu Overlay */}
       {showMenu && (
-        <div className="fixed inset-0 bg-black bg-opacity-50 backdrop-blur-md z-40" onClick={closeMenu}></div>
+        <div
+          className="fixed inset-0 bg-black bg-opacity-50 backdrop-blur-md z-40"
+          onClick={closeMenu}
+        ></div>
       )}
 
-      {/* Mobile Menu - Slides in from the RIGHT */}
+      {/* Mobile Menu */}
       <div
         className={`${
           showMenu ? "translate-x-0" : "translate-x-full"
-        } fixed top-0 right-0 h-full w-3/4 sm:w-1/2 md:hidden bg-white text-black border-l-2 border-gradient-purple-blue transition-transform duration-300 ease-in-out flex flex-col p-6 z-50`}
+        } fixed top-0 right-0 h-full w-3/4 sm:w-1/2 md:w-3/4 lg:hidden bg-white dark:bg-gray-900 text-black dark:text-white border-l-2 border-gradient-purple-blue transition-transform duration-300 ease-in-out flex flex-col p-6 z-[1000]`}
       >
         {/* Close Icon */}
-        <AiIcons.AiOutlineClose size={24} className="absolute top-5 right-5 cursor-pointer" onClick={closeMenu} />
+        <AiIcons.AiOutlineClose
+          size={24}
+          className="absolute top-5 right-5 cursor-pointer"
+          onClick={closeMenu}
+        />
 
         {/* Mobile Menu Links */}
         <ul className="flex flex-col gap-6 pt-16">
@@ -77,22 +129,38 @@ function Top() {
             </Link>
           </li>
           <li>
-            <Link to="/about" className="cursor-pointer text-lg" onClick={closeMenu}>
+            <Link
+              to="/about"
+              className="cursor-pointer text-lg"
+              onClick={closeMenu}
+            >
               About
             </Link>
           </li>
           <li>
-            <Link to="/process" className="cursor-pointer text-lg" onClick={closeMenu}>
+            <Link
+              to="/process"
+              className="cursor-pointer text-lg"
+              onClick={closeMenu}
+            >
               Process
             </Link>
           </li>
           <li>
-            <Link to="/projects" className="cursor-pointer text-lg" onClick={closeMenu}>
+            <Link
+              to="/projects"
+              className="cursor-pointer text-lg"
+              onClick={closeMenu}
+            >
               Projects
             </Link>
           </li>
           <li>
-            <Link to="/contact" className="cursor-pointer text-lg" onClick={closeMenu}>
+            <Link
+              to="/contact"
+              className="cursor-pointer text-lg"
+              onClick={closeMenu}
+            >
               Hire Us
             </Link>
           </li>
