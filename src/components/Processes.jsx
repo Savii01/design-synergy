@@ -19,10 +19,10 @@ function Processes() {
           {/* Subscription / Plan Card */}
           <div className="bg-gray-100 dark:bg-gray-700 hover:bg-white/70 dark:hover:bg-gray-600 flex flex-col border-2 border-gray-400 dark:border-gray-600 py-8 rounded-3xl w-[290px] h-[350px] px-5">
             {/* Icon */}
-            <AiIcons.AiFillCreditCard className="w-[32px] h-[32px] text-purple  dark:text-lightBlue dark:text-blue" />
+            <AiIcons.AiFillCreditCard className="w-[32px] h-[32px] text-purple  dark:text-lightBlue" />
             <div className="text-left mt-3 flex flex-col gap-y-2">
               <h1 className="text-[28px] font-extrabold text-black dark:text-white">
-                Subscription
+                Subscribe
               </h1>
               <p className="text-[16px] text-black dark:text-gray-300">
                 Select a plan that aligns with your business needs. Whether you're starting fresh or scaling up, we have the right solution to bring your brand to life.
@@ -33,7 +33,7 @@ function Processes() {
           {/* Brief Card */}
           <div className="bg-gray-100 dark:bg-gray-700 hover:bg-white/70 dark:hover:bg-gray-600 flex flex-col border-2 border-gray-400 dark:border-gray-600 py-8 rounded-3xl w-[290px] h-[350px] px-5">
             {/* Icon */}
-            <FaIcons.FaBriefcase className="w-[32px] h-[32px] text-purple  dark:text-lightBlue dark:text-blue" />
+            <FaIcons.FaBriefcase className="w-[32px] h-[32px] text-purple  dark:text-lightBlue" />
             <div className="text-left mt-3 flex flex-col gap-y-2">
               <h1 className="text-[28px] font-extrabold text-black dark:text-white">
                 Brief
@@ -47,7 +47,7 @@ function Processes() {
           {/* Design Card */}
           <div className="bg-gray-100 dark:bg-gray-700 hover:bg-white/70 dark:hover:bg-gray-600 flex flex-col border-2 border-gray-400 dark:border-gray-600 py-8 rounded-3xl w-[290px] h-[350px] px-5">
             {/* Icon */}
-            <BsIcons.BsPalette className="w-[32px] h-[32px] text-purple  dark:text-lightBlue dark:text-blue" />
+            <BsIcons.BsPalette className="w-[32px] h-[32px] text-purple  dark:text-lightBlue" />
             <div className="text-left mt-3 flex flex-col gap-y-2">
               <h1 className="text-[28px] font-extrabold text-black dark:text-white">
                 Design

@@ -1,4 +1,4 @@
-import React, { useRef } from "react";
+import React, { useRef, useEffect } from "react";
 import { Link } from "react-router-dom"; // Import React Router Link
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Navigation, Pagination, Autoplay } from "swiper/modules";
@@ -50,43 +50,53 @@ const projects = [
 ];
 
 const ProjectSlider = () => {
-  // Create refs for navigation buttons
   const prevRef = useRef(null);
   const nextRef = useRef(null);
+  const swiperRef = useRef(null);
+
+  useEffect(() => {
+    if (swiperRef.current && swiperRef.current.swiper) {
+      const swiperInstance = swiperRef.current.swiper;
+      swiperInstance.params.navigation.prevEl = prevRef.current;
+      swiperInstance.params.navigation.nextEl = nextRef.current;
+      swiperInstance.navigation.init();
+      swiperInstance.navigation.update();
+    }
+  }, []);
 
   return (
-    <div className="relative mx-auto py-6 px-6 lg:px-32 xl:px-[350px] bg-white dark:bg-gray-900">
+    <div className="relative mx-auto py-6 px-6 lg:px-32 2xl:px-[350px] bg-white dark:bg-gray-900">
       <h1 className="text-center text-[32px] font-customFont mb-10 font-bold text-black dark:text-white mt-10">
         Selected Works
       </h1>
+
       <Swiper
-        slidesPerView={1} // Shows only one slide at a time
+        ref={swiperRef}
+        slidesPerView={1}
         spaceBetween={20}
-        navigation={{
-          prevEl: prevRef.current,
-          nextEl: nextRef.current,
-        }}
         autoplay={{ delay: 4000 }}
         loop
-        // pagination={{ clickable: true }}  {/* Uncomment if pagination is desired */}
+        navigation={{ prevEl: prevRef.current, nextEl: nextRef.current }}
+        pagination={{
+          el: ".custom-pagination",
+          clickable: true,
+          renderBullet: (index, className) => `
+            <span class="${className} w-3 h-3 mx-1 rounded-full  bg-gray-300 dark:bg-gray-500 transition-all duration-300 transform scale-100 hover:scale-125"></span>
+          `,
+        }}
         modules={[Navigation, Pagination, Autoplay]}
         className="mySwiper"
-        onBeforeInit={(swiper) => {
-          // Assign the navigation elements to Swiper's navigation
-          swiper.params.navigation.prevEl = prevRef.current;
-          swiper.params.navigation.nextEl = nextRef.current;
-        }}
       >
         {projects.map((project) => (
           <SwiperSlide key={project.id} className="rounded-xl overflow-hidden">
-            <div className="bg-gray-200 dark:bg-gray-800 hover:bg-black dark:hover:bg-gray-700  hover:text-white shadow-lg rounded-lg">
+            <div className="bg-gray-200 dark:bg-gray-800 hover:bg-gray-300 dark:hover:bg-gray-700 hover:text-white shadow-lg rounded-lg">
               <img
                 src={project.image}
                 alt={project.name}
                 className="w-[400px] h-[200px] md:w-[1215px] md:h-[500px] object-cover rounded-t-lg"
               />
               <div className="p-2 md:p-4 flex items-center justify-between">
-                <h3 className="text-sm md:text-lg font-bold text-black dark:text-white ">
+                <h3 className="text-sm md:text-lg font-bold text-black  dark:text-white">
                   {project.name}
                 </h3>
                 <div className="hidden md:flex text-[10px] md:text-sm text-gray-500 bg-white dark:bg-gray-500 dark:text-white rounded-full px-4 py-3 font-semibold">
@@ -94,7 +104,7 @@ const ProjectSlider = () => {
                 </div>
                 <a
                   href={project.link}
-                  className="mt-2 inline-block  text-blue-500 text-[10px] md:text-sm font-medium dark:text-white"
+                  className="mt-2 inline-block text-black text-[10px] md:text-sm font-medium dark:text-white"
                 >
                   View Project →
                 </a>
@@ -107,16 +117,21 @@ const ProjectSlider = () => {
       {/* Custom Navigation Buttons */}
       <button
         ref={prevRef}
-        className="absolute left-10 top-1/2 transform -translate-y-1/2 bg-black/50 hover:bg-black text-white w-10 h-10 rounded-full z-50"
+        className="absolute left-10 top-1/2 transform -translate-y-1/2 bg-black/50 hover:bg-black text-white w-10 h-10 rounded-full z-50 flex items-center justify-center"
       >
         &#10094;
       </button>
       <button
         ref={nextRef}
-        className="absolute right-10 top-1/2 transform -translate-y-1/2 bg-black/50 hover:bg-black text-white w-10 h-10 rounded-full z-50"
+        className="absolute right-10 top-1/2 transform -translate-y-1/2 bg-black/50 hover:bg-black text-white w-10 h-10 rounded-full z-50 flex items-center justify-center"
       >
         &#10095;
       </button>
+
+      {/* Custom Pagination */}
+      <div className="flex justify-center  mt-6">
+        <div className="custom-pagination flex justify-center items-center gap-2"></div>
+      </div>
 
       <div className="flex justify-center mt-8">
         <Link
