@@ -55,7 +55,7 @@ const ProjectSlider = () => {
   const nextRef = useRef(null);
 
   return (
-    <div className="relative mx-auto py-6 px-6 lg:px-32 xl:px-80 bg-white dark:bg-gray-900">
+    <div className="relative mx-auto py-6 px-6 lg:px-32 xl:px-[350px] bg-white dark:bg-gray-900">
       <h1 className="text-center text-[32px] font-customFont mb-10 font-bold text-black dark:text-white mt-10">
         Selected Works
       </h1>
