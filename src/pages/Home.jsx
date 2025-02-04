@@ -3,6 +3,8 @@ import Top from '../components/Top'
 import Hero from '../components/Hero'
 import TrustedBrands from '../components/TrustedBrands'
 import ProjectSlider from '../components/ProjectSlider'
+import Processes from '../components/Processes.jsx'
+
 
 function Home() {
   return (
@@ -11,6 +13,7 @@ function Home() {
       <Hero/>
       <TrustedBrands/>
       <ProjectSlider/>
+      <Processes/>
     </div>
   )
 }

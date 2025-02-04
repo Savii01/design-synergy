@@ -1,41 +1,20 @@
-import React, { useState } from "react";
-import Typewriter from "typewriter-effect";
+import React from "react";
 
 function Hero() {
-  const [isTypingComplete, setTypingComplete] = useState(false);
-
   return (
     <div className="w-screen h-screen flex justify-center items-center px-4">
       <div className="flex flex-col gap-6 items-start md:items-center text-center max-w-4xl px-4 md:px-6">
         {/* Availability Badge */}
-        <div className="animate-pulse flex gap-2  bg-white/10 border border-black px-4 py-2 rounded-lg">
+        <div className="animate-pulse flex gap-2 bg-white/10 border border-black px-4 py-2 rounded-lg">
           <div className="bg-green/35 rounded-full w-4 h-4 flex justify-center items-center">
             <div className="bg-green rounded-full w-2 h-2"></div>
           </div>
           <p className="text-black text-sm sm:text-base">Available Now</p>
         </div>
 
-        {/* Typing Animation Header */}
-        <h1 className="text-[28px] text-left md:text-center sm:text-[40px] md:text-[50px] lg:text-[60px] leading-[1.2] tracking-[-1px] font-customFont max-w-[100%] md:max-w-[700px]">
-          {!isTypingComplete ? (
-            <Typewriter
-              options={{
-                strings: ["Brands That Stand Out. Designs That Deliver."],
-                autoStart: true,
-                delay: 50,
-                cursor: "|",
-                loop: false,
-              }}
-              onInit={(typewriter) => {
-                typewriter
-                  .typeString("Brands That Stand Out. Designs That Deliver.")
-                  .callFunction(() => setTypingComplete(true))
-                  .start();
-              }}
-            />
-          ) : (
-            "Brands That Stand Out. Designs That Deliver."
-          )}
+        {/* Static Header */}
+        <h1 className="text-[28px] text-left md:text-center sm:text-[40px] md:text-[50px] lg:text-[60px] leading-[1.2] tracking-[-1px] font-customFont max-w-[100%] md:max-w-[700px] animate-fadeIn">
+          Brands That Stand Out. Designs That Deliver.
         </h1>
 
         {/* Subtext */}
