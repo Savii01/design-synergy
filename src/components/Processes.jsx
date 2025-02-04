@@ -9,9 +9,9 @@ import Delivery1 from '../Assets/images/delivery1.eba86ac6c70aa03225cb.png'
 
 function Processes() {
   return (
-    <div className="bg-gray-100 mx-14 rounded-[30px] mb-10">
+    <div className="bg-gray-100 rounded-[30px] mb-10">
       <div className="text-black flex flex-col justify-center items-center text-center mt-10 md:px-4 pb-20 md:pt-10">
-        <p className="text-[16px] font-semibold mb-5">Our Process</p>
+        <p className="text-[18px] font-semibold mb-5">Our Process</p>
         <h1 className="font-sans font-extrabold text-[32px] px-4 md:text-[36px] lg:text-[36px] leading-[36px] md:leading-[40px]">
             Create your design in 3 quick steps!
         </h1>
