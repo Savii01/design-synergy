@@ -4,6 +4,7 @@ import Hero from '../components/Hero'
 import TrustedBrands from '../components/TrustedBrands'
 import ProjectSlider from '../components/ProjectSlider'
 import Processes from '../components/Processes.jsx'
+import Services from '../components/Services.jsx'
 
 
 function Home() {
@@ -14,6 +15,7 @@ function Home() {
       <TrustedBrands/>
       <ProjectSlider/>
       <Processes/>
+      <Services/>
     </div>
   )
 }

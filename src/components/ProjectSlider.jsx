@@ -66,9 +66,10 @@ const ProjectSlider = () => {
 
   return (
     <div className="relative mx-auto py-6 px-6 lg:px-32 2xl:px-[350px] bg-white dark:bg-gray-900">
-      <h1 className="text-center text-[32px] font-customFont mb-10 font-bold text-black dark:text-white mt-10">
+      <h1 className="text-center text-[32px] font-customFont font-bold text-black dark:text-white mt-10">
         Selected Works
       </h1>
+      <p className="text-gray-800 dark:text-gray-200 text-[18px]  mb-10 text-center">Take a little time to explore some of our interesting projects</p>
 
       <Swiper
         ref={swiperRef}

@@ -6,6 +6,7 @@ import * as RiIcons from 'react-icons/ri'
 import Brief1 from '../Assets/images/brief1.3e327d7e0961bf467fd8.png'
 import Design1 from '../Assets/images/delivery1.eba86ac6c70aa03225cb.png'
 import Delivery1 from '../Assets/images/delivery1.eba86ac6c70aa03225cb.png'
+import { Link } from "react-router-dom"; // Import React Router Link
 
 function Processes() {
   return (
@@ -13,7 +14,7 @@ function Processes() {
       <div className="text-black dark:text-white flex flex-col justify-center items-center text-center mt-10 md:px-4 pb-20 md:pt-10">
         <p className="text-[18px] font-semibold mb-5">Our Process</p>
         <h1 className="font-customFont font-extrabold text-[36px] px-4 md:text-[36px] lg:text-[36px] leading-[36px] md:leading-[40px]">
-          Create your design in 3 quick steps!
+          Get the Best of Our Services in 4 quick steps!
         </h1>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 mt-10">
           {/* Subscription / Plan Card */}
@@ -36,7 +37,7 @@ function Processes() {
             <FaIcons.FaBriefcase className="w-[32px] h-[32px] text-purple  dark:text-lightBlue" />
             <div className="text-left mt-3 flex flex-col gap-y-2">
               <h1 className="text-[28px] font-extrabold text-black dark:text-white">
-                Brief
+                Brief 
               </h1>
               <p className="text-[16px] text-black dark:text-gray-300">
                 We dive into your vision, goals, and requirements. Through a structured onboarding process, we gather insights to ensure our strategy aligns perfectly with your brand.
@@ -72,6 +73,9 @@ function Processes() {
             </div>
           </div>
         </div>
+        <button className="mt-10 text-white w-[300px] h-[50px] md:w-[200px] text-[16px] sm:text-[20px] bg-purple dark:bg-lightBlue dark:text-black dark:hover:text-white font-bold py-2 px-6 sm:px-8 rounded-lg hover:bg-gradient-purple-blue transition-all">
+            Hire Us
+          </button>
       </div>
     </div>
   );
