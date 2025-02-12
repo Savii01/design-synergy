@@ -69,7 +69,7 @@ const ProjectSlider = () => {
       <h1 className="text-center text-[32px] font-customFont font-bold text-black dark:text-white mt-10">
         Selected Works
       </h1>
-      <p className="text-gray-800 dark:text-gray-200 text-[18px]  mb-10 text-center">Take a little time to explore some of our interesting projects</p>
+      <p className="text-gray-800 dark:text-gray-200 text-[16px]  mb-10 text-center">Take a little time to explore some of our interesting projects</p>
 
       <Swiper
         ref={swiperRef}
@@ -90,11 +90,11 @@ const ProjectSlider = () => {
       >
         {projects.map((project) => (
           <SwiperSlide key={project.id} className="rounded-xl overflow-hidden">
-            <div className="bg-gray-200 dark:bg-gray-800 hover:bg-gray-300 dark:hover:bg-gray-700 hover:text-white shadow-lg rounded-lg">
+            <div className="bg-gray-200 dark:bg-gray-800 cursor-grab hover:bg-gray-300 dark:hover:bg-gray-700 hover:text-white shadow-lg rounded-lg">
               <img
                 src={project.image}
                 alt={project.name}
-                className="w-[400px] h-[200px] md:w-[1215px] md:h-[500px] object-cover rounded-t-lg"
+                className="w-[400px] h-[200px] md:w-[1215px] md:h-[500px] object-cover rounded-t-lg cursor-grabbing"
               />
               <div className="p-2 md:p-4 flex items-center justify-between">
                 <h3 className="text-sm md:text-lg font-bold text-black  dark:text-white">

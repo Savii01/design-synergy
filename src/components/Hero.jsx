@@ -20,7 +20,7 @@ function Hero() {
         </h1>
 
         {/* Subtext */}
-        <p className="text-sm text-left md:text-center sm:text-base max-w-xs sm:max-w-lg md:max-w-2xl text-black dark:text-white">
+        <p className="text-[16px] text-left md:text-center sm:text-base max-w-xs sm:max-w-lg md:max-w-2xl text-black dark:text-white">
           At Design Synergy, we create bold identities and seamless experiences
           that not only look incredible but drive results. Whether it’s building
           brands that turn heads or crafting designs that convert, we make every
