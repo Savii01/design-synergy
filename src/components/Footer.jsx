@@ -29,13 +29,13 @@ const Footer = () => {
           {/* Footer Links */}
           <div className="flex flex-col gap-y-4 justify-start items-start">
 
-          <div className="flex flex-wrap justify-center gap-4 mt-6 md:mt-0">
+          <div className="flex flex-wrap lg:justify-center gap-4 mt-6 md:mt-0">
             <a href="/about" className="text-black dark:text-gray-300 hover:text-purple dark:hover:text-lightBlue  font-semibold transition">About</a>
             <a href="/services" className="text-black dark:text-gray-300 hover:text-purple dark:hover:text-lightBlue  font-semibold transition">Services</a>
             <a href="/portfolio" className="text-black dark:text-gray-300 hover:text-purple dark:hover:text-lightBlue  font-semibold transition">Projects</a>
             <a href="/contact" className="text-black dark:text-gray-300 hover:text-purple dark:hover:text-lightBlue  font-semibold transition">Contact</a>
           </div>
-          <div className="flex flex-wrap justify-center gap-4 mt-2 md:mt-0">
+          <div className="flex flex-wrap lg:justify-center gap-6 mt-2 md:mt-0">
             <a href="/terms" className="text-black dark:text-gray-300 hover:text-purple dark:hover:text-lightBlue transition">Terms</a>
             <a href="/policy" className="text-black dark:text-gray-300 hover:text-purple dark:hover:text-lightBlue transition">Policy</a>
             <a href="/portfolio" className="text-black dark:text-gray-300 hover:text-purple dark:hover:text-lightBlue transition">Refund</a>

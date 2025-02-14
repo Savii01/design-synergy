@@ -2,7 +2,7 @@ import React from 'react'
 
 function Values() {
   return (
-   <div className="max-w-5xl mx-2 text-center my-24">
+   <div className="max-w-5xl mx-5 text-center my-24">
            <h2 className="text-3xl font-customFont text-gray-800 dark:text-white mb-6">Our Core Values</h2>
            <div className="grid md:grid-cols-2 gap-6">
              <div className="bg-white dark:bg-gray-800 p-6 rounded-2xl border">

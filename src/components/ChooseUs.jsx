@@ -5,7 +5,7 @@ function ChooseUs() {
   return (
     <div>
       
-      <div className="text-black py-12 px-4 mt-10 flex flex-col justify-center gap-5 items-center text-center lg:text-left md:px-10 pb-20 md:pt-10 lg:flex-row lg:gap-[150px]">
+      <div className="text-black py-12 px-5 mt-10 flex flex-col justify-center gap-5 items-center text-center lg:text-left md:px-10 pb-20 md:pt-10 lg:flex-row lg:gap-[150px]">
         <div className="">
             <h1 className='font-customFont text-[36px] dark:text-white md:text-[36px] lg:text-[48px] leading-[36px] md:leading-[48px]'>
                 Why Choose Us
