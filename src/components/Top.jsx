@@ -16,7 +16,7 @@ function Top() {
   return (
     <>
       {/* Top Bar */}
-      <div className="fixed w-full h-20 bg-white dark:bg-gray-900 text-black dark:text-white border-b border-black dark:border-gray-700 flex justify-between items-center px-4 md:px-8 lg:px-16 z-[1000]">
+      <div className="fixed w-full h-20 bg-white dark:bg-gray-900 text-black rounded-b-xl dark:text-white border-b border-black dark:border-gray-700 flex justify-between items-center px-4 md:px-8 lg:px-16 z-[1000]">
         {/* Logo Section */}
         <div className="flex items-center gap-2">
           <img
@@ -24,7 +24,7 @@ function Top() {
             alt="Logo"
             className="w-10 h-10 rounded-full bg-black"
           />
-          <h2 className="text-[16px] font-bold md:text-[20px]">
+          <h2 className="text-[16px] tracking-tighter font-bold md:text-[20px]">
             Design Synergy
           </h2>
         </div>
@@ -35,7 +35,7 @@ function Top() {
             <li>
               <Link
                 to="/"
-                className="cursor-pointer hover:text-purple py-2 px-4"
+                className="cursor-pointer hover:font-semi-bold hover:text-purple py-2 px-4 dark:hover:text-lightBlue"
               >
                 Home
               </Link>
@@ -43,7 +43,7 @@ function Top() {
             <li>
               <Link
                 to="/about"
-                className="cursor-pointer hover:text-purple py-2 px-4"
+                className="cursor-pointer hover:font-semi-bold hover:text-purple py-2 px-4 dark:hover:text-lightBlue"
               >
                 About
               </Link>
@@ -51,15 +51,15 @@ function Top() {
             <li>
               <Link
                 to="/process"
-                className="cursor-pointer hover:text-purple py-2 px-4"
+                className="cursor-pointer hover:font-semi-bold hover:text-purple py-2 px-4 dark:hover:text-lightBlue"
               >
-                Process
+               Services
               </Link>
             </li>
             <li>
               <Link
                 to="/projects"
-                className="cursor-pointer hover:text-purple py-2 px-4"
+                className="cursor-pointer hover:font-semi-bold hover:text-purple py-2 px-4 dark:hover:text-lightBlue"
               >
                 Projects
               </Link>
@@ -78,7 +78,7 @@ function Top() {
             className="ml-4 p-2 rounded-full bg-gray-200 dark:bg-gray-700 hover:bg-gray-300 dark:hover:bg-gray-600 transition"
             aria-label="Toggle Dark Mode"
           >
-            {darkMode ? <FaIcons.FaSun size={24} /> : <FaIcons.FaMoon size={24} />}
+            {darkMode ? <FaIcons.FaSun size={24} className="hover:text-lightBlue" /> : <FaIcons.FaMoon size={24} className="hover:text-purple" />}
           </button>
         </div>
 
@@ -90,11 +90,11 @@ function Top() {
             className="mr-4 p-2 rounded-full bg-gray-200 dark:bg-gray-700 hover:bg-gray-300 dark:hover:bg-gray-600 transition"
             aria-label="Toggle Dark Mode"
           >
-            {darkMode ? <FaIcons.FaSun size={24} /> : <FaIcons.FaMoon size={24} />}
+            {darkMode ? <FaIcons.FaSun size={24} className="hover:text-lightBlue" /> : <FaIcons.FaMoon size={24} className="hover:text-purple" />}
           </button>
           <AiIcons.AiOutlineMenu
             size={24}
-            className="text-black dark:text-white cursor-pointer"
+            className="text-black dark:text-white cursor-pointer hover:font-semibold"
             onClick={() => setShowMenu(true)}
           />
         </div>
@@ -143,7 +143,7 @@ function Top() {
               className="cursor-pointer text-lg"
               onClick={closeMenu}
             >
-              Process
+             Services
             </Link>
           </li>
           <li>

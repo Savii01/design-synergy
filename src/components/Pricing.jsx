@@ -20,7 +20,7 @@ const pricingPlans = [
       "Custom Illustrations & Graphics",
       "3 Rounds of Revisions",
     ],
-    buttonText: "Contact for Quote",
+    buttonText: "Order Now",
     buttonLink: "#",
     footerText: "Let's discuss your project",
   },
@@ -39,7 +39,7 @@ const pricingPlans = [
       "Website and Web Application Development",
       "Unlimited Revisions",
     ],
-    buttonText: "Get Started",
+    buttonText: "Order Now",
     buttonLink: "#",
     footerText: "Cancel anytime",
   },
@@ -47,9 +47,9 @@ const pricingPlans = [
 
 const PricingTable = () => {
   return (
-    <div className="mx-4 flex flex-col justify-center items-center">
+    <div className="mx-4 flex mt-10 flex-col justify-center pb-20 items-center">
       <div className="mx-2 max-w-4xl text-center">
-        <h2 className="text-base font-semibold text-gray-900  dark:text-white">Pricing</h2>
+        <h2 className="text-[18px] font-semibold text-gray-900 uppercase dark:text-white">Pricing</h2>
         <p className="mt-2 text-[36px] leading-[36px] font-bold font-customFont text-gray-900 dark:text-white">
           Choose The Right Plan For You
         </p>
@@ -59,11 +59,11 @@ const PricingTable = () => {
         </p>
       </div>
       <div className="py-8 px-2 lg:p-8 mx-1">
-        <div className="flex  rounded-3xl flex-col bg-black  dark:bg-gray-800 lg:flex-row justify-center items-center gap-2 lg:max-w-[700px] p-2">
+        <div className="flex  rounded-3xl flex-col bg-black  dark:bg-gray-800 lg:flex-row justify-center items-center gap-1 lg:max-w-[700px] p-1">
         {pricingPlans.map((plan) => (
           <div
             key={plan.id}
-            className="w-full max-w-sm border border-black  dark:border-gray-400 rounded-2xl p-6 bg-white dark:bg-gray-700 dark:hover:bg-gray-600 shadow-lg hover:shadow-2xl transition-all duration-300 flex flex-col"
+            className="w-full max-w-sm border border-black  dark:border-gray-400 rounded-3xl p-6 bg-white dark:bg-gray-700 dark:hover:bg-gray-600 shadow-lg hover:shadow-2xl transition-all duration-300 flex flex-col"
           >
             {/* Title & Description */}
             <h3 className="text-2xl font-customFont dark:text-white text-black">{plan.title}</h3>
@@ -87,7 +87,7 @@ const PricingTable = () => {
             {/* Action Button */}
             <a
               href={plan.buttonLink}
-              className="mt-6 bg-black dark:bg-lightBlue dark:text-black dark:hover:text-white dark:font-bold text-white text-center py-2 rounded-lg hover:bg-gradient-purple-blue dark:hover:bg-lightBlue transition block"
+              className="mt-6 bg-purple dark:bg-lightBlue dark:text-black dark:hover:text-white dark:font-bold text-white text-center py-2 rounded-lg hover:bg-gradient-purple-blue dark:hover:bg-lightBlue transition block"
             >
               {plan.buttonText}
             </a>

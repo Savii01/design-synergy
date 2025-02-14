@@ -10,9 +10,9 @@ import { Link } from "react-router-dom"; // Import React Router Link
 
 function Processes() {
   return (
-    <div className="bg-gray-100 dark:bg-gray-800 rounded-[30px] py-4 mt-10 mb-10">
+    <div className="bg-gray-50 dark:bg-gray-800 rounded-[30px] py-4 mt-10 mb-10">
       <div className="text-black dark:text-white flex flex-col justify-center items-center text-center mt-10 md:px-4 pb-20 md:pt-10">
-        <p className="text-[18px] font-semibold mb-5">Our Process</p>
+        <p className="text-[18px] dark:text-gray-200 font-semibold uppercase mb-5">Our Process</p>
         <h1 className="font-customFont font-extrabold text-[36px] px-4 md:text-[36px] lg:text-[36px] leading-[36px] md:leading-[40px]">
           Get the Best of Our Services in 4 quick steps!
         </h1>
