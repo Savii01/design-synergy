@@ -8,7 +8,7 @@ import HappyClient from "../Assets/images/happy client.jpg"
 export default function About() {
   return (
     <div className="py-12 mt-20 px-2 md:px-12 lg:px-24 ">
-      <div className="text-left md:text-center lg:px-[150px] mb-20">
+      <div className="text-left md:text-center lg:px-[150px] px-5 mb-20">
         <p className="text-[18px] dark:text-gray-200 uppercase my-4">Our Story</p>
         <h1 className="text-4xl font-customFont text-gray-900 dark:text-gray-100 mb-4">Showcasing the Real People and Authentic Vision Behind Our Design Philosophy</h1>
         <p className="text-lg text-gray-600 dark:text-gray-200 mb-8">

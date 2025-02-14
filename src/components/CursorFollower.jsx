@@ -31,7 +31,7 @@ const CursorFollower = () => {
 
   return (
     <div
-      className="z-[1500] fixed top-0 left-0 w-4 h-4 bg-purple dark:bg-lightBlue rounded-full pointer-events-none transition-transform duration-75 ease-out"
+      className="z-[1500] fixed top-0 left-0 w-4 h-4 bg-purple hidden lg:block dark:bg-lightBlue rounded-full pointer-events-none transition-transform duration-75 ease-out"
       style={{
         transform: `translate(${trail.x}px, ${trail.y}px)`,
       }}
