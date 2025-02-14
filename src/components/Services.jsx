@@ -12,7 +12,7 @@ function Services() {
         <h1 className="font-customFont font-extrabold text-[36px] px-4 md:text-[36px] lg:text-[36px] leading-[36px] md:leading-[40px]">
           Take a look at What we do
         </h1>
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3  gap-3 mt-10 mx-4 ">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-3 mt-10 mx-4 ">
                   {/* Subscription / Plan Card */}
                   <div className="bg-white dark:bg-gray-700 hover:bg-gray-100 dark:hover:bg-gray-600 flex flex-col border-2 border-gray-400 dark:border-gray-600 py-8 rounded-3xl w-[325px] h-[300px] px-5">
                     {/* Icon */}
