@@ -18,7 +18,7 @@ function Processes() {
         </h1>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 mt-10">
           {/* Subscription / Plan Card */}
-          <div className="bg-gray-100 dark:bg-gray-700 hover:bg-white/70 dark:hover:bg-gray-600 flex flex-col border-2 border-gray-400 dark:border-gray-600 py-8 rounded-3xl w-[290px] h-[350px] px-5">
+          <div className="bg-gray-100 dark:bg-gray-700 hover:bg-white/70 dark:hover:bg-gray-600 flex flex-col border dark:border-2 border-gray-400 dark:border-gray-600 py-8 rounded-3xl w-[290px] h-[350px] px-5">
             {/* Icon */}
             <AiIcons.AiFillCreditCard className="w-[32px] h-[32px] text-purple  dark:text-lightBlue" />
             <div className="text-left mt-3 flex flex-col gap-y-2">
@@ -32,7 +32,7 @@ function Processes() {
           </div>
 
           {/* Brief Card */}
-          <div className="bg-gray-100 dark:bg-gray-700 hover:bg-white/70 dark:hover:bg-gray-600 flex flex-col border-2 border-gray-400 dark:border-gray-600 py-8 rounded-3xl w-[290px] h-[350px] px-5">
+          <div className="bg-gray-100 dark:bg-gray-700 hover:bg-white/70 dark:hover:bg-gray-600 flex flex-col border dark:border-2 border-gray-400 dark:border-gray-600 py-8 rounded-3xl w-[290px] h-[350px] px-5">
             {/* Icon */}
             <FaIcons.FaBriefcase className="w-[32px] h-[32px] text-purple  dark:text-lightBlue" />
             <div className="text-left mt-3 flex flex-col gap-y-2">
@@ -46,7 +46,7 @@ function Processes() {
           </div>
 
           {/* Design Card */}
-          <div className="bg-gray-100 dark:bg-gray-700 hover:bg-white/70 dark:hover:bg-gray-600 flex flex-col border-2 border-gray-400 dark:border-gray-600 py-8 rounded-3xl w-[290px] h-[350px] px-5">
+          <div className="bg-gray-100 dark:bg-gray-700 hover:bg-white/70 dark:hover:bg-gray-600 flex flex-col border dark:border-2 border-gray-400 dark:border-gray-600 py-8 rounded-3xl w-[290px] h-[350px] px-5">
             {/* Icon */}
             <BsIcons.BsPalette className="w-[32px] h-[32px] text-purple  dark:text-lightBlue" />
             <div className="text-left mt-3 flex flex-col gap-y-2">
@@ -60,7 +60,7 @@ function Processes() {
           </div>
 
           {/* Delivery Card */}
-          <div className="bg-gray-100 dark:bg-gray-700 hover:bg-white/70 dark:hover:bg-gray-600 flex flex-col border-2 border-gray-400 dark:border-gray-600 py-8 rounded-3xl w-[290px] h-[350px] px-5">
+          <div className="bg-gray-100 dark:bg-gray-700 hover:bg-white/70 dark:hover:bg-gray-600 flex flex-col border dark:border-2 border-gray-400 dark:border-gray-600 py-8 rounded-3xl w-[290px] h-[350px] px-5">
             {/* Icon */}
             <AiIcons.AiFillFileZip className="w-[32px] h-[32px] text-purple  dark:text-lightBlue" />
             <div className="text-left mt-3 flex flex-col gap-y-2">
