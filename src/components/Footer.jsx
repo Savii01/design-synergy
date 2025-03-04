@@ -4,7 +4,7 @@ import Logo from "../Assets/images/LOGO-circle.png";
 
 const Footer = () => {
   return (
-    <footer className="bg-gray-50 text-black dark:bg-gray-800 dark:text-white py-10">
+    <footer className="bg-gray-200 text-black dark:bg-gray-800 dark:text-white py-10">
       <div className="container mx-auto px-6 md:px-12 lg:px-20">
         <div className="flex flex-col md:flex-row justify-between items-start">
           
