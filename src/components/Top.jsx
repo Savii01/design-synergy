@@ -50,7 +50,7 @@ function Top() {
             </li>
             <li>
               <Link
-                to="/process"
+                to="/services"
                 className="cursor-pointer hover:font-semi-bold hover:text-purple py-2 px-4 dark:hover:text-lightBlue"
               >
                Services
@@ -139,7 +139,7 @@ function Top() {
           </li>
           <li>
             <Link
-              to="/process"
+              to="/services"
               className="cursor-pointer text-lg"
               onClick={closeMenu}
             >

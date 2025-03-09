@@ -1,48 +1,52 @@
 // Import images
 import NexovaImg from "../src/Assets/images/nexova/2.png";
-
+import PureSpaceImg from "../src/Assets/images/PureSpace/cover.png";
+import GlowSkincare from "../src/Assets/images/Glow/cover.png";
+import NexeraImg from "../src/Assets/images/Nexera/cover.png";
+import LinkerPayImg from "../src/Assets/images/Linkerpay/cover.png";
+import EcocycleImg from "../src/Assets/images/Ecocycle/cover.png";
 // Project Data
 export const projects = [
   {
     id: 1,
     name: "Nexova",
     image: NexovaImg,
-    category: ["Visual", "Brand"],
+    category: ["Brand Identity", "Social media"],
     link: "#",
   },
   {
     id: 2,
-    name: "Nexova",
-    image: NexovaImg,
-    category: ["Framer", "Development"],
+    name: "PureSpace",
+    image: PureSpaceImg,
+    category: ["Brand Identity", "Social media", "Web Developement"],
     link: "#",
   },
   {
     id: 3,
-    name: "Nexova",
-    image: NexovaImg,
-    category: ["Strategy", "Brand"],
+    name: "Glow",
+    image: GlowSkincare,
+    category: ["Brand Identity", "Social media", "Web Developement"],
     link: "#",
   },
   {
     id: 4,
-    name: "Nexova",
-    image: NexovaImg,
-    category: ["Marketing", "Brand"],
+    name: "Nexera",
+    image: NexeraImg,
+    category: ["Brand Identity", "Web Development"],
     link: "#",
   },
   {
     id: 5,
-    name: "Nexova",
-    image: NexovaImg,
-    category: ["UI/UX", "Motion"],
+    name: "LinkerPay",
+    image: LinkerPayImg,
+    category: ["Brand Identity"],
     link: "#",
   },
   {
     id: 6,
-    name: "Nexova",
-    image: NexovaImg,
-    category: ["Web design", "Visual Design"],
+    name: "Ecocycle",
+    image: EcocycleImg,
+    category: ["Brand Identity", "Product Design"],
     link: "#",
   },
 ];

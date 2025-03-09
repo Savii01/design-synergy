@@ -17,6 +17,7 @@ function Hero() {
         {/* Static Header */}
         <h1 className="text-[28px] text-left md:text-center sm:text-[40px] md:text-[50px] lg:text-[60px] leading-[1.2] tracking-[-1px] font-customFont max-w-[100%] md:max-w-[700px] animate-fadeIn text-black dark:text-white">
           Brands That Stand Out. Designs That Deliver.
+          {/* Elevating brands through creativity <br/> & innovation. */}
         </h1>
 
         {/* Subtext */}

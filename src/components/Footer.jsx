@@ -32,22 +32,22 @@ const Footer = () => {
           <div className="flex flex-wrap lg:justify-center gap-4 mt-6 md:mt-0">
             <a href="/about" className="text-black dark:text-gray-300 hover:text-purple dark:hover:text-lightBlue  font-semibold transition">About</a>
             <a href="/services" className="text-black dark:text-gray-300 hover:text-purple dark:hover:text-lightBlue  font-semibold transition">Services</a>
-            <a href="/portfolio" className="text-black dark:text-gray-300 hover:text-purple dark:hover:text-lightBlue  font-semibold transition">Projects</a>
+            <a href="/projects" className="text-black dark:text-gray-300 hover:text-purple dark:hover:text-lightBlue  font-semibold transition">Projects</a>
             <a href="/contact" className="text-black dark:text-gray-300 hover:text-purple dark:hover:text-lightBlue  font-semibold transition">Contact</a>
           </div>
           <div className="flex flex-wrap lg:justify-center gap-6 mt-2 md:mt-0">
             <a href="/terms" className="text-black dark:text-gray-300 hover:text-purple dark:hover:text-lightBlue transition">Terms</a>
             <a href="/policy" className="text-black dark:text-gray-300 hover:text-purple dark:hover:text-lightBlue transition">Policy</a>
-            <a href="/portfolio" className="text-black dark:text-gray-300 hover:text-purple dark:hover:text-lightBlue transition">Refund</a>
-            <a href="/contact" className="text-black dark:text-gray-300 hover:text-purple dark:hover:text-lightBlue transition">Pricing</a>
+            <a href="/refund" className="text-black dark:text-gray-300 hover:text-purple dark:hover:text-lightBlue transition">Refund</a>
+            <a href="/pricing" className="text-black dark:text-gray-300 hover:text-purple dark:hover:text-lightBlue transition">Pricing</a>
           </div>
           </div>
 
           {/* Social Icons */}
           <div className="flex gap-4 mt-6 md:mt-0">
-            <a href="#" className="text-gray-800 dark:text-gray-400 dark:hover:text-lightBlue hover:text-purple transition text-xl"><FaFacebook /></a>
+            <a href="https://web.facebook.com/profile.php?id=61558468053412" className="text-gray-800 dark:text-gray-400 dark:hover:text-lightBlue hover:text-purple transition text-xl"><FaFacebook /></a>
             <a href="#" className="text-gray-800 dark:text-gray-400 dark:hover:text-lightBlue hover:text-purple transition text-xl"><FaTwitter /></a>
-            <a href="#" className="text-gray-800 dark:text-gray-400 dark:hover:text-lightBlue hover:text-purple transition text-xl"><FaInstagram /></a>
+            <a href="https://www.instagram.com/designsynergy01/" className="text-gray-800 dark:text-gray-400 dark:hover:text-lightBlue hover:text-purple transition text-xl"><FaInstagram /></a>
             <a href="#" className="text-gray-800 dark:text-gray-400 dark:hover:text-lightBlue hover:text-purple transition text-xl"><FaLinkedin /></a>
           </div>
         </div>
