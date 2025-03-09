@@ -3,32 +3,10 @@ import { Swiper, SwiperSlide } from 'swiper/react';
 import 'swiper/css';
 import 'swiper/css/pagination';
 import 'swiper/css/navigation';
-import { Navigation, Pagination, Autoplay } from 'swiper/modules';
+import { Autoplay } from 'swiper/modules';
+import { brands } from '../Data'; // Import brands data
 
 function TrustedBrands() {
-  const brands = [
-    {
-      alt: 'Transistor',
-      src: 'https://tailwindui.com/plus/img/logos/158x48/transistor-logo-gray-900.svg',
-    },
-    {
-      alt: 'Reform',
-      src: 'https://tailwindui.com/plus/img/logos/158x48/reform-logo-gray-900.svg',
-    },
-    {
-      alt: 'Tuple',
-      src: 'https://tailwindui.com/plus/img/logos/158x48/tuple-logo-gray-900.svg',
-    },
-    {
-      alt: 'SavvyCal',
-      src: 'https://tailwindui.com/plus/img/logos/158x48/savvycal-logo-gray-900.svg',
-    },
-    {
-      alt: 'Statamic',
-      src: 'https://tailwindui.com/plus/img/logos/158x48/statamic-logo-gray-900.svg',
-    },
-  ];
-
   return (
     <div className="bg-white dark:bg-gray-900 pb-24 sm:pb-32">
       <div className="mx-auto max-w-7xl px-6 lg:px-8">
