@@ -307,6 +307,7 @@ module.exports = {
           purple: '#831DE2',
           neonBlue: '#0FE5B2',
           green: '#33cc33', 
+          lilBlack: '#040008', 
       },
       backgroundImage: {
         'gradient-purple-blue': 'linear-gradient(to right, #831DE2, #0FE5B2)', // Define the gradient

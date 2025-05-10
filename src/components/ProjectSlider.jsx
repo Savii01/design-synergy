@@ -1,7 +1,7 @@
 import { useRef, useEffect } from "react";
 import { Link } from "react-router-dom"; // Import React Router Link
 import { Swiper, SwiperSlide } from "swiper/react";
-import { Navigation, Pagination } from "swiper/modules";
+import { Autoplay, Navigation, Pagination } from "swiper/modules";
 import "swiper/css";
 import "swiper/css/navigation";
 import "swiper/css/pagination";
@@ -13,14 +13,36 @@ const ProjectSlider = () => {
   const swiperRef = useRef(null);
 
   useEffect(() => {
-    if (swiperRef.current && swiperRef.current.swiper) {
-      const swiperInstance = swiperRef.current.swiper;
+    const swiperInstance = swiperRef.current?.swiper;
+  
+    if (swiperInstance) {
       swiperInstance.params.navigation.prevEl = prevRef.current;
       swiperInstance.params.navigation.nextEl = nextRef.current;
       swiperInstance.navigation.init();
       swiperInstance.navigation.update();
+  
+      // Defer adding hover listeners to ensure swiper.el is ready
+      setTimeout(() => {
+        const swiperEl = swiperInstance.el;
+  
+        if (!swiperEl) return;
+  
+        const handleMouseEnter = () => swiperInstance.autoplay?.stop();
+        const handleMouseLeave = () => swiperInstance.autoplay?.start();
+  
+        swiperEl.addEventListener("mouseenter", handleMouseEnter);
+        swiperEl.addEventListener("mouseleave", handleMouseLeave);
+  
+        // Cleanup
+        return () => {
+          swiperEl.removeEventListener("mouseenter", handleMouseEnter);
+          swiperEl.removeEventListener("mouseleave", handleMouseLeave);
+        };
+      }, 0);
     }
   }, []);
+  
+  
 
   return (
     <div className="relative mx-auto py-6 px-6 lg:px-32 2xl:px-[350px] bg-white dark:bg-gray-900">
@@ -35,11 +57,15 @@ const ProjectSlider = () => {
       {/* Swiper Slider */}
       <Swiper
         ref={swiperRef}
-        modules={[Navigation, Pagination]}
+        modules={[Navigation, Pagination, Autoplay]}
         spaceBetween={2} // Add some space between slides
         slidesPerView={1} // Show 3 slides at a time
         centeredSlides={true} // Center the active slide
         loop={true} // Enable looping
+        autoplay={{
+          delay: 3000,
+          disableOnInteraction: false,
+        }} // Enable autoplay
         pagination={{
           el: ".custom-pagination",
           clickable: true,
