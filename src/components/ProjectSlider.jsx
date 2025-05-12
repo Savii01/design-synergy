@@ -111,14 +111,13 @@ const ProjectSlider = () => {
                   ))}
                 </div>
 
-                <a
-                  href={project.link}
+                {/* ✅ View Project with React Router Link */}
+                <Link
+                  to={`/projects/${project.id}`}
                   className="mt-1 md:mt-0 text-black text-[10px] md:text-base font-medium dark:text-white hover:underline"
-                  target="_blank"
-                  rel="noopener noreferrer"
                 >
                   View Project →
-                </a>
+                </Link>
               </div>
             </div>
           </SwiperSlide>
@@ -144,6 +143,7 @@ const ProjectSlider = () => {
         <div className="custom-pagination flex justify-center items-center gap-2"></div>
       </div>
 
+      {/* View All Projects Link */}
       <div className="flex justify-center mt-8">
         <Link
           to="/projects"
