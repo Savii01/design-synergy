@@ -47,7 +47,7 @@ const ProjectDetail = () => {
             href={project.website}
             target="_blank"
             rel="noopener noreferrer"
-            className="bg-purple text-white px-4 py-2 rounded-lg font-semibold text-center hover:bg-purple-700 transition"
+            className="bg-purple dark:bg-lightBlue dark:text-black text-white px-4 py-2 rounded-lg font-semibold text-center hover:bg-purple-700 transition"
           >
             Visit Website ↗
           </a>
@@ -57,7 +57,7 @@ const ProjectDetail = () => {
             href={project.behance}
             target="_blank"
             rel="noopener noreferrer"
-            className="bg-gray-800 text-white px-4 py-2 rounded-lg font-semibold text-center hover:bg-gray-900 transition"
+            className="bg-gray-800 text-white px-4 py-2 rounded-lg font-semibold text-center hover:bg-gray-700 transition"
           >
             View on Behance ↗
           </a>
