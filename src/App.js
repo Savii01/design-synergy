@@ -29,11 +29,12 @@ function App() {
           <Route path="/projects" element={<Project />} />
           <Route path="/services" element={<ServicesPage />} />
           <Route path="refund" element={<Pricing />} />  
-          <Route path="/pricing" element={<Refund />} />
+          <Route path="/refund" element={<Refund />} />
           <Route path="/contact" element={<HireUs/>} /> 
           <Route path="/terms" element={<Terms />} />
           <Route path="/policy" element={<PrivacyPolicy/>} />
           <Route path="/projects/:id" element={<ProjectDetail />} />
+          <Route path="/pricing" element={<Pricing />} />
           <Route path="*" element={<Navigate to="/" />} /> {/* Redirect unknown routes */}
         </Routes>
         <Footer />
