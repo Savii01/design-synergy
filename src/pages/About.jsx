@@ -26,7 +26,7 @@ export default function About() {
         initial={{ opacity: 0, y: 50 }}
         animate={{ opacity: heroInView ? 1 : 0, y: heroInView ? 0 : 50 }}
         transition={{ duration: 0.8 }}
-        className="text-left md:text-center px-10 lg:px-[174px] mb-20 bg-gray-50 flex flex-col gap-y-5 dark:bg-gray-800 py-20 mt-20"
+        className="h-screen text-left md:text-center px-10 lg:px-[174px] 2xl:px-[300px] lg:justify-center lg:items-center mb-20 bg-gray-50 flex flex-col gap-y-5 dark:bg-gray-800 py-20 mt-20"
       >
         <p className="text-[18px] dark:text-gray-200 uppercase ">Our Story</p>
         <h1 className="text-4xl lg:text-[60px] font-customFont leading-[1] tracking-tight text-gray-900 dark:text-gray-100 lg:px-20">
@@ -45,7 +45,7 @@ export default function About() {
         transition={{ duration: 0.8 }}
         className="mb-10 mx-5 lg:px-48 flex flex-col md:flex-row justify-center items-center gap-8"
       >
-        <img src={HappyClient} alt="Smiling Woman" className="w-full md:w-1/2 md:h-[500px] object-cover rounded-2xl border-gray-700 border-2" />
+        <img src={HappyClient} alt="Smiling Woman" className="w-full md:w-1/2 md:h-[500px] 2xl:h-[800px] object-cover rounded-2xl border-gray-700 border-2" />
         <div className="md:w-1/2">
           <h2 className="text-3xl font-customFont dark:text-gray-100 text-gray-800 mb-4">
             We’ve helped over 5K+ Businesses level up their online and offline Identity.

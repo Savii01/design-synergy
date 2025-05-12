@@ -22,7 +22,9 @@ function Services() {
                         Brand Designs
                       </h1>
                       <p className="text-[16px] text-black dark:text-gray-300">
-                         We craft unique brand identities with strategic design that capture your essence and resonate with your audience.
+                      We don’t just design logos — we build full brand identities that tell your story, earn trust, and make you unforgettable.<br/>
+                      <span className="bg-purple/50 dark:text-white dark:bg-lightBlue/50 rounded-lg px-4">→ Think strategy, style, and soul — all in one.</span>
+                      
                       </p>
                     </div>
                   </div>
@@ -36,7 +38,9 @@ function Services() {
                         Social Media Designs 
                       </h1>
                       <p className="text-[16px] text-black dark:text-gray-300">
-                      Enhance your online presence with custom, eye-catching visuals designed to boost engagement and build community.
+                      Custom visuals that make your feed stop the scroll and speak your vibe. From content kits to cohesive grids, we help you show up consistently and creatively.<br/>
+                      <span className="bg-purple/50 dark:text-white dark:bg-lightBlue/50 rounded-lg px-4">→ Build community. Boost engagement. Stay branded.</span>
+                      
                       </p>
                     </div>
                   </div>
@@ -50,7 +54,9 @@ function Services() {
                         Web Development
                       </h1>
                       <p className="text-[16px] text-black dark:text-gray-300">
-                      We develop responsive, high-performance websites and web applications that seamlessly blend design and functionality for an exceptional user experience.
+                      Responsive, clean, and coded to convert. We build websites that aren’t just pretty — they perform.<br/>
+                      <span className="bg-purple/50 dark:text-white dark:bg-lightBlue/50 rounded-lg px-4">→ Sleek UX. Smart structure. Real results.</span>
+                      
                       </p>
                     </div>
                   </div>

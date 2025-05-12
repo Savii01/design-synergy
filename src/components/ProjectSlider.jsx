@@ -1,11 +1,11 @@
 import { useRef, useEffect } from "react";
-import { Link } from "react-router-dom"; // Import React Router Link
+import { Link } from "react-router-dom";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Autoplay, Navigation, Pagination } from "swiper/modules";
 import "swiper/css";
 import "swiper/css/navigation";
 import "swiper/css/pagination";
-import {projects} from "../Data"; // Import project data
+import { projects } from "../Data";
 
 const ProjectSlider = () => {
   const prevRef = useRef(null);
@@ -14,26 +14,23 @@ const ProjectSlider = () => {
 
   useEffect(() => {
     const swiperInstance = swiperRef.current?.swiper;
-  
+
     if (swiperInstance) {
       swiperInstance.params.navigation.prevEl = prevRef.current;
       swiperInstance.params.navigation.nextEl = nextRef.current;
       swiperInstance.navigation.init();
       swiperInstance.navigation.update();
-  
-      // Defer adding hover listeners to ensure swiper.el is ready
+
       setTimeout(() => {
         const swiperEl = swiperInstance.el;
-  
         if (!swiperEl) return;
-  
+
         const handleMouseEnter = () => swiperInstance.autoplay?.stop();
         const handleMouseLeave = () => swiperInstance.autoplay?.start();
-  
+
         swiperEl.addEventListener("mouseenter", handleMouseEnter);
         swiperEl.addEventListener("mouseleave", handleMouseLeave);
-  
-        // Cleanup
+
         return () => {
           swiperEl.removeEventListener("mouseenter", handleMouseEnter);
           swiperEl.removeEventListener("mouseleave", handleMouseLeave);
@@ -41,8 +38,6 @@ const ProjectSlider = () => {
       }, 0);
     }
   }, []);
-  
-  
 
   return (
     <div className="relative mx-auto py-6 px-6 lg:px-32 2xl:px-[350px] bg-white dark:bg-gray-900">
@@ -53,30 +48,28 @@ const ProjectSlider = () => {
         Take a little time to explore some of our interesting projects
       </p>
 
-
-      {/* Swiper Slider */}
       <Swiper
         ref={swiperRef}
         modules={[Navigation, Pagination, Autoplay]}
-        spaceBetween={2} // Add some space between slides
-        slidesPerView={1} // Show 3 slides at a time
-        centeredSlides={true} // Center the active slide
-        loop={true} // Enable looping
+        spaceBetween={2}
+        slidesPerView={1}
+        centeredSlides={true}
+        loop={true}
         autoplay={{
           delay: 3000,
           disableOnInteraction: false,
-        }} // Enable autoplay
+        }}
         pagination={{
           el: ".custom-pagination",
           clickable: true,
           renderBullet: (index, className) => `
-            <span class="${className} w-3 h-3 mx-1 rounded-full  bg-gray-300 dark:bg-gray-500 transition-all duration-300 transform scale-100 hover:scale-125"></span>
+            <span class="${className} w-3 h-3 mx-1 rounded-full bg-gray-300 dark:bg-gray-500 transition-all duration-300 transform scale-100 hover:scale-125"></span>
           `,
         }}
         breakpoints={{
           1024: {
-            slidesPerView: 1.4, // Center slide wider
-            spaceBetween: 1, // Reduce space between slides
+            slidesPerView: 1.4,
+            spaceBetween: 1,
           },
         }}
         navigation={{ prevEl: prevRef.current, nextEl: nextRef.current }}
@@ -94,19 +87,36 @@ const ProjectSlider = () => {
         }}
       >
         {projects.map((project) => (
-          <SwiperSlide key={project.id} className=" rounded-xl overflow-hidden transition-all duration-700 ease-in-out">
+          <SwiperSlide
+            key={project.id}
+            className="rounded-xl overflow-hidden transition-all duration-700 ease-in-out"
+          >
             <div className="bg-gray-200 dark:bg-gray-800 cursor-grab hover:bg-gray-300 dark:hover:bg-gray-700 dark:text-white rounded-lg lg:rounded-3xl">
               <img
                 src={project.image}
                 alt={project.name}
                 className="w-full h-[250px] md:h-[500px] object-cover rounded-t-lg lg:rounded-t-3xl cursor-grabbing"
               />
-              <div className="p-2 md:p-6 md:px-10 flex items-center justify-between">
+              <div className="p-2 md:p-6 md:px-10 flex flex-col md:flex-row md:items-center md:justify-between gap-2">
                 <h3 className="text-lg font-bold">{project.name}</h3>
-                <p className="hidden md:flex text-[10px] md:text-sm text-gray-500 bg-white dark:bg-gray-500 dark:text-white rounded-full px-4 py-3 font-semibold">
-                  {project.category.join(" ● ")}
-                </p>
-                <a href={project.link} className="mt-2 inline-block text-black text-[10px] md:text-base font-medium dark:text-white">
+
+                <div className="hidden md:flex flex-wrap gap-2">
+                  {project.category.map((tag, index) => (
+                    <span
+                      key={index}
+                      className="text-xs px-2 py-1 rounded-full bg-gray-200 text-gray-800 dark:bg-gray-700 dark:text-gray-200 transition-transform duration-300 hover:scale-105"
+                    >
+                      {tag}
+                    </span>
+                  ))}
+                </div>
+
+                <a
+                  href={project.link}
+                  className="mt-1 md:mt-0 text-black text-[10px] md:text-base font-medium dark:text-white hover:underline"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
                   View Project →
                 </a>
               </div>
@@ -115,7 +125,7 @@ const ProjectSlider = () => {
         ))}
       </Swiper>
 
-     {/* Custom Navigation Buttons */}
+      {/* Custom Navigation Buttons */}
       <button
         ref={prevRef}
         className="absolute left-10 lg:left-80 top-[350px] md:top-[400px] lg:top-[450px] transform -translate-y-1/2 bg-black/50 hover:bg-black text-white w-10 h-10 rounded-full z-50 flex items-center justify-center"
@@ -129,10 +139,11 @@ const ProjectSlider = () => {
         &#10095;
       </button>
 
-       {/* Custom Pagination */}
-       <div className="flex justify-center  mt-6">
+      {/* Custom Pagination */}
+      <div className="flex justify-center mt-6">
         <div className="custom-pagination flex justify-center items-center gap-2"></div>
       </div>
+
       <div className="flex justify-center mt-8">
         <Link
           to="/projects"
