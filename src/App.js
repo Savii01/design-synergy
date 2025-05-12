@@ -14,6 +14,7 @@ import HireUs from "./pages/HireUs";
 import Refund from "./pages/Refund";
 import Pricing from "./pages/Pricing";
 import ServicesPage from "./pages/ServicesPage";
+import ProjectDetail from "./pages/ProjectDetail";
 
 function App() {
   return (
@@ -32,6 +33,7 @@ function App() {
           <Route path="/contact" element={<HireUs/>} /> 
           <Route path="/terms" element={<Terms />} />
           <Route path="/policy" element={<PrivacyPolicy/>} />
+          <Route path="/projects/:id" element={<ProjectDetail />} />
           <Route path="*" element={<Navigate to="/" />} /> {/* Redirect unknown routes */}
         </Routes>
         <Footer />

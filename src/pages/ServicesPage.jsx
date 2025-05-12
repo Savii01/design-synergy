@@ -6,6 +6,7 @@ import Services from "../components/Services";
 import ProjectSlider from "../components/ProjectSlider";
 import ChooseUs from "../components/ChooseUs";
 import Processes from "../components/Processes";
+import { Link } from "react-router-dom";
 
 export default function ServicesPage() {
   const options = { threshold: 0.2 };
@@ -39,14 +40,14 @@ export default function ServicesPage() {
           <em>do the job</em>. Looks that stick. Systems that scale.
         </p>
         {/* Buttons */}
-        <div className="flex flex-col sm:flex-row gap-4">
+        {/* <div className="flex flex-col sm:flex-row gap-4">
           <button className="text-white w-[300px] h-[50px] md:w-[200px] text-[16px] sm:text-[20px] bg-purple dark:bg-lightBlue dark:text-black dark:hover:text-white font-bold py-2 px-6 sm:px-8 rounded-lg hover:bg-gradient-purple-blue transition-all">
             Hire Us
           </button>
           <button className="text-black dark:text-white text-[16px] sm:text-[20px] bg-white dark:bg-gray-800 border dark:hover:bg-gray-700 border-black dark:border-gray-600 font-bold py-2 px-6 sm:px-8 rounded-lg hover:bg-black hover:text-white transition-all">
             Learn More
           </button>
-        </div>
+        </div> */}
       </motion.div>
 
       {/* Services */}
@@ -109,12 +110,12 @@ export default function ServicesPage() {
 
         {/* Buttons */}
         <div className="flex flex-col justify-center items-center mx-5 mt-10 sm:flex-row gap-4">
-          <button className="text-white w-[300px] h-[50px] md:w-[200px] text-[16px] sm:text-[20px] bg-purple dark:bg-lightBlue dark:text-black dark:hover:text-white font-bold py-2 px-6 sm:px-8 rounded-lg hover:bg-gradient-purple-blue transition-all">
+          <Link to='/contact' className="text-white text-center w-[300px] h-[50px] md:w-[200px] text-[16px] sm:text-[20px] bg-purple dark:bg-lightBlue dark:text-black dark:hover:text-white font-bold py-2 px-6 sm:px-8 rounded-lg hover:bg-gradient-purple-blue transition-all">
             Hire Us
-          </button>
-          <button className="w-[300px] h-[50px] md:w-[200px] text-black dark:text-white text-[16px] sm:text-[20px] bg-white dark:bg-gray-800 border dark:hover:bg-gray-700 border-black dark:border-gray-600 font-bold py-2 px-6 sm:px-8 rounded-lg hover:bg-black hover:text-white transition-all">
+          </Link>
+          {/* <button className="w-[300px] h-[50px] md:w-[200px] text-black dark:text-white text-[16px] sm:text-[20px] bg-white dark:bg-gray-800 border dark:hover:bg-gray-700 border-black dark:border-gray-600 font-bold py-2 px-6 sm:px-8 rounded-lg hover:bg-black hover:text-white transition-all">
             Learn More
-          </button>
+          </button> */}
         </div>
       </motion.div>
     </div>
