@@ -15,10 +15,10 @@ function HireUs() {
   }, [location]);
 
   return (
-    <div className="bg-white dark:bg-gray-900 px-6 lg:px-32 py-20">
+    <div className="bg-white dark:bg-gray-900 px-6 lg:px-32 py-20 mt-20">
       {!selectedPlan ? (
         <div>
-          <h2 className="text-center text-2xl">Choose a Plan Before We Proceed</h2>
+          <h2 className="text-center font-customFont text-2xl">Hello friend, you'd have to choose a Plan Before We Proceed 😊</h2>
           <PricingTable />
         </div>
       ) : selectedPlan === 'standalone' ? (

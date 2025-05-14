@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import emailjs from '@emailjs/browser';
+import emailjs from "@emailjs/browser";
 
 const FullBrandingForm = () => {
   const [formData, setFormData] = useState({
@@ -11,53 +11,51 @@ const FullBrandingForm = () => {
 
   const [isSubmitted, setIsSubmitted] = useState(false);
   const [showAlert, setShowAlert] = useState(false);
+  const [whatsappMessage, setWhatsappMessage] = useState("");
 
   const handleChange = (e) => {
     const { name, value } = e.target;
-    setFormData({ ...formData, [name]: value });
+    setFormData((prev) => ({ ...prev, [name]: value }));
   };
 
   const handleSubmit = (e) => {
     e.preventDefault();
 
-    emailjs.send(
-      'service_p8qel8i',
-      'template_fullbranding',
-      formData,
-      'Y21i1oUIg68Guej_s'
-    ).then(() => {
-      setIsSubmitted(true);
-      setShowAlert(true);
-
-      // Hide alert after 3 seconds
-      setTimeout(() => {
-        setShowAlert(false);
-      }, 3000);
-
-      // Optional: Clear form
-      setFormData({
-        name: "",
-        email: "",
-        designStyle: "",
-        businessGoals: "",
-      });
-    }).catch((error) => {
-      console.error("EmailJS error:", error);
-    });
-  };
-
-  const whatsappMessage = `Hello! I have chosen the Full Branding Package. Here are my details:
+    const message = `Hello! I have chosen the Full Branding Package. Here are my details:
 
 Name: ${formData.name}
 Email: ${formData.email}
 Preferred Design Style: ${formData.designStyle}
 Business Goals: ${formData.businessGoals}`;
 
-  const whatsappLink = `https://wa.me/2347012636013?text=${encodeURIComponent(whatsappMessage)}`;
+    setWhatsappMessage(message);
+
+    emailjs
+      .send("service_p8qel8i", "template_fullbranding", formData, "Y21i1oUIg68Guej_s")
+      .then(() => {
+        setIsSubmitted(true);
+        setShowAlert(true);
+        setTimeout(() => setShowAlert(false), 3000);
+
+        setFormData({
+          name: "",
+          email: "",
+          designStyle: "",
+          businessGoals: "",
+        });
+      })
+      .catch((error) => console.error("EmailJS error:", error));
+  };
+
+  const whatsappLink = `https://wa.me/2347012636013?text=${encodeURIComponent(
+    whatsappMessage
+  )}`;
 
   return (
     <div className="max-w-3xl w-full mx-auto mt-10">
-      <h2 className="text-2xl font-customFont mb-6 text-gray-900 dark:text-white">Full Branding Package Form</h2>
+      <h2 className="text-2xl font-customFont mb-6 text-gray-900 dark:text-white">
+        Full Branding Package Form
+      </h2>
 
       {showAlert && (
         <div className="px-4 py-3 mb-4 text-white bg-blue rounded">
@@ -74,7 +72,7 @@ Business Goals: ${formData.businessGoals}`;
             value={formData.name}
             onChange={handleChange}
             required
-            className="w-full px-4 py-3 rounded-md border border-gray-300 dark:border-gray-600 bg-white dark:bg-gray-800 text-gray-900 dark:text-white"
+            className="w-full px-4 py-3 rounded-md border bg-white dark:bg-gray-800"
           />
         </div>
 
@@ -86,7 +84,7 @@ Business Goals: ${formData.businessGoals}`;
             value={formData.email}
             onChange={handleChange}
             required
-            className="w-full px-4 py-3 rounded-md border border-gray-300 dark:border-gray-600 bg-white dark:bg-gray-800 text-gray-900 dark:text-white"
+            className="w-full px-4 py-3 rounded-md border bg-white dark:bg-gray-800"
           />
         </div>
 
@@ -97,7 +95,7 @@ Business Goals: ${formData.businessGoals}`;
             value={formData.designStyle}
             onChange={handleChange}
             required
-            className="w-full px-4 py-3 rounded-md border border-gray-300 dark:border-gray-600 bg-white dark:bg-gray-800 text-gray-900 dark:text-white"
+            className="w-full px-4 py-3 rounded-md border bg-white dark:bg-gray-800"
           >
             <option value="">Select style</option>
             <option value="Minimalist">Minimalist</option>
@@ -116,7 +114,7 @@ Business Goals: ${formData.businessGoals}`;
             onChange={handleChange}
             rows="4"
             required
-            className="w-full px-4 py-3 rounded-md border border-gray-300 dark:border-gray-600 bg-white dark:bg-gray-800 text-gray-900 dark:text-white"
+            className="w-full px-4 py-3 rounded-md border bg-white dark:bg-gray-800"
           ></textarea>
         </div>
 
@@ -139,7 +137,7 @@ Business Goals: ${formData.businessGoals}`;
             href={whatsappLink}
             target="_blank"
             rel="noopener noreferrer"
-            className="block mt-4 text-center w-full bg-gray-600 dark:bg-gray-200 dark:text-black text-white py-3 rounded-md hover:bg-green hover:text-black transition"
+            className="block mt-4 text-center w-full bg-gray-500 dark:bg-gray-200 dark:text-black text-white py-3 rounded-md hover:bg-green hover:text-black font-semibold transition"
           >
             Send to WhatsApp
           </a>

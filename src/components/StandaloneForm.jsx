@@ -34,9 +34,9 @@ const StandaloneForm = () => {
     consent: false,
   });
 
-  const [formStatus, setFormStatus] = useState('');
-  const [whatsAppLink, setWhatsAppLink] = useState('');
   const [showAlert, setShowAlert] = useState(false);
+  const [isSubmitted, setIsSubmitted] = useState(false);
+  const [whatsappMessage, setWhatsappMessage] = useState('');
 
   const handleChange = (e) => {
     const { name, value, type, checked } = e.target;
@@ -53,21 +53,12 @@ const StandaloneForm = () => {
     }));
   };
 
-  const validateForm = () => {
-    if (!formData.name || !formData.email || formData.projectTypes.length === 0 || !formData.consent) {
-      setFormStatus('⚠️ Please fill all required fields.');
-      return false;
-    }
-    return true;
-  };
-
   const handleSubmit = (e) => {
     e.preventDefault();
-    setFormStatus('');
-    setShowAlert(false);
-    setWhatsAppLink('');
 
-    if (!validateForm()) return;
+    if (!formData.name || !formData.email || formData.projectTypes.length === 0 || !formData.consent) {
+      return;
+    }
 
     const emailData = {
       name: formData.name,
@@ -77,12 +68,7 @@ const StandaloneForm = () => {
       projectGoals: formData.projectGoals || 'Not specified',
     };
 
-    emailjs.send('service_p8qel8i', 'template_standalone', emailData, 'Y21i1oUIg68Guej_s')
-      .then(() => {
-        setFormStatus('');
-        setShowAlert(true);
-
-        const message = `Hello, I have chosen the standalone package and would like to discuss the scope and pricing.
+    const message = `Hello, I have chosen the standalone package and would like to discuss the scope and pricing.
 
 Name: ${emailData.name}
 Email: ${emailData.email}
@@ -90,11 +76,15 @@ Project Types: ${emailData.projectTypes}
 Style Preference: ${emailData.stylePreference}
 Project Goals: ${emailData.projectGoals}`;
 
-        const encodedMsg = encodeURIComponent(message);
-        const waLink = `https://wa.me/2347012636013?text=${encodedMsg}`;
-        setWhatsAppLink(waLink);
+    setWhatsappMessage(message);
 
-        // Reset form
+    emailjs
+      .send('service_p8qel8i', 'template_standalone', emailData, 'Y21i1oUIg68Guej_s')
+      .then(() => {
+        setIsSubmitted(true);
+        setShowAlert(true);
+        setTimeout(() => setShowAlert(false), 3000);
+
         setFormData({
           name: '',
           email: '',
@@ -103,15 +93,13 @@ Project Goals: ${emailData.projectGoals}`;
           projectGoals: '',
           consent: false,
         });
-
-        // Hide alert after 3 seconds
-        setTimeout(() => setShowAlert(false), 3000);
       })
       .catch((error) => {
-        console.error(error);
-        setFormStatus('❌ Failed to send. Please try again.');
+        console.error('EmailJS error:', error);
       });
   };
+
+  const whatsappLink = `https://wa.me/2347012636013?text=${encodeURIComponent(whatsappMessage)}`;
 
   return (
     <div className="max-w-4xl mx-auto px-4 mt-10">
@@ -119,7 +107,7 @@ Project Goals: ${emailData.projectGoals}`;
 
       {showAlert && (
         <div className="px-4 py-3 text-white leading-normal bg-blue rounded mb-4">
-          <p>✅ Your message was submitted successfully!</p>
+          ✅ Your message was submitted successfully!
         </div>
       )}
 
@@ -226,16 +214,12 @@ Project Goals: ${emailData.projectGoals}`;
             Submit Project
           </button>
 
-          {formStatus && (
-            <p className="text-sm text-red-600 dark:text-red-400">{formStatus}</p>
-          )}
-
-          {whatsAppLink && (
+          {isSubmitted && (
             <a
-              href={whatsAppLink}
+              href={whatsappLink}
               target="_blank"
               rel="noopener noreferrer"
-              className="w-full block text-center h-12 bg-black hover:bg-green text-white font-semibold rounded-xl transition"
+              className="block mt-4 text-center w-full bg-gray-500 dark:bg-gray-200 dark:text-black text-white py-3 rounded-md hover:bg-green hover:text-black font-semibold transition"
             >
               📤 Send to WhatsApp
             </a>
