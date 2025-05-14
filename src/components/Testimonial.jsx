@@ -68,7 +68,7 @@ const Testimonial = () => {
           transition={{ duration: 0.3 }}
         >
           <Link
-            to="/contact"
+            to="/hireus"
             className="flex justify-center items-center text-white w-[300px] h-[50px] md:w-[200px] text-[16px] sm:text-[20px] bg-purple dark:bg-lightBlue dark:text-black dark:hover:text-white font-bold py-2 px-6 sm:px-8 rounded-lg hover:bg-gradient-purple-blue transition-all text-center leading-[50px]"
           >
             Hire Us

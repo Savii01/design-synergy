@@ -5,6 +5,7 @@ import ChooseUs from "../components/ChooseUs";
 import Services from "../components/Services";
 import Processes from "../components/Processes";
 import HappyClient from "../Assets/images/happy client.jpg";
+import { Link } from "react-router-dom";
 
 export default function About() {
   // Continuous animation when scrolling up & down
@@ -117,12 +118,12 @@ export default function About() {
 
         {/* Buttons */}
         <div className="flex flex-col justify-center items-center mx-5 mt-10 sm:flex-row gap-4">
-          <button className="text-white w-[300px] h-[50px] md:w-[200px] text-[16px] sm:text-[20px] bg-purple dark:bg-lightBlue dark:text-black dark:hover:text-white font-bold py-2 px-6 sm:px-8 rounded-lg hover:bg-gradient-purple-blue transition-all">
+          <Link to="/hireus" className="flex justify-center items-center text-white w-[300px] h-[50px] md:w-[200px] text-[16px] sm:text-[20px] bg-purple dark:bg-lightBlue dark:text-black dark:hover:text-white font-bold py-2 px-6 sm:px-8 rounded-lg hover:bg-gradient-purple-blue transition-all">
             Hire Us
-          </button>
-          <button className="w-[300px] h-[50px] md:w-[200px] text-black dark:text-white text-[16px] sm:text-[20px] bg-white dark:bg-gray-800 border dark:hover:bg-gray-700 border-black dark:border-gray-600 font-bold py-2 px-6 sm:px-8 rounded-lg hover:bg-black hover:text-white transition-all">
+          </Link>
+          <Link to="/services" className="flex flex-col justify-center items-center w-[300px] h-[50px] md:w-[200px] text-black dark:text-white text-[16px] sm:text-[20px] bg-white dark:bg-gray-800 border dark:hover:bg-gray-700 border-black dark:border-gray-600 font-bold py-2 px-6 sm:px-8 rounded-lg hover:bg-black hover:text-white transition-all">
             Learn More
-          </button>
+          </Link>
         </div>
       </motion.div>
     </div>

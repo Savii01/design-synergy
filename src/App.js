@@ -30,7 +30,7 @@ function App() {
           <Route path="/services" element={<ServicesPage />} />
           <Route path="refund" element={<Pricing />} />  
           <Route path="/refund" element={<Refund />} />
-          <Route path="/contact" element={<HireUs/>} /> 
+          <Route path="/hireus" element={<HireUs/>} /> 
           <Route path="/terms" element={<Terms />} />
           <Route path="/policy" element={<PrivacyPolicy/>} />
           <Route path="/projects/:id" element={<ProjectDetail />} />

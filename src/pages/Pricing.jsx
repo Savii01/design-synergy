@@ -95,7 +95,7 @@ function Pricing() {
         {/* Hire Us Button (Branding) */}
         <div className="text-center mt-10">
           <Link
-            to="/contact"
+            to="/hireus"
             className="inline-block bg-purple dark:bg-lightBlue text-white dark:text-black font-semibold px-6 py-3 rounded-lg hover:bg-purple-700 dark:hover:bg-lightBlue transition"
           >
             Hire Us →

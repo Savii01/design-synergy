@@ -62,7 +62,7 @@ function Services() {
                     </div>
                   </div>
                 </div>
-                  <Link to='/contact' className="mt-10 text-white w-[300px] h-[50px] md:w-[200px] text-[16px] sm:text-[20px] bg-purple dark:bg-lightBlue dark:text-black dark:hover:text-white font-bold py-2 px-6 sm:px-8 rounded-lg hover:bg-gradient-purple-blue transition-all">
+                  <Link to='/hireus' className="mt-10 text-white w-[300px] h-[50px] md:w-[200px] text-[16px] sm:text-[20px] bg-purple dark:bg-lightBlue dark:text-black dark:hover:text-white font-bold py-2 px-6 sm:px-8 rounded-lg hover:bg-gradient-purple-blue transition-all">
                     Hire Us
                   </Link>
         </div>

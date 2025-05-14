@@ -65,7 +65,15 @@ function Top() {
               </Link>
             </li>
             <li>
-              <Link to="/contact">
+              <Link
+                to="/pricing"
+                className="cursor-pointer hover:font-semi-bold hover:text-purple py-2 px-4 dark:hover:text-lightBlue"
+              >
+                Pricing
+              </Link>
+            </li>
+            <li>
+              <Link to="/hireus">
                 <button className="text-white text-[16px] bg-black dark:bg-gray-800 font-bold py-2 px-4 rounded-md hover:bg-gradient-purple-blue transition-all">
                   Hire Us
                 </button>
@@ -157,7 +165,16 @@ function Top() {
           </li>
           <li>
             <Link
-              to="/contact"
+              to="/pricing"
+              className="cursor-pointer text-lg"
+              onClick={closeMenu}
+            >
+              Pricing
+            </Link>
+          </li>
+          <li>
+            <Link
+              to="/hireus"
               className="cursor-pointer text-lg"
               onClick={closeMenu}
             >
